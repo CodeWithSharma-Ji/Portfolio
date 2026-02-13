@@ -498,6 +498,7 @@ footer {
   }
 
   .nav-links {
+    display: none;
     gap: 1rem;
   }
 
@@ -511,6 +512,7 @@ footer {
   }
 
   .nav-links.active {
+    display: flex;
     position: absolute;
     top: 70px;
     left: 0;
