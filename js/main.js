@@ -66,7 +66,7 @@ const observer = new IntersectionObserver(function (entries) {
 }, observerOptions);
 
 // Observe all cards and items for animation
-document.querySelectorAll('.card, .achievement-item, .education-item, .project-card').forEach(element => {
+document.querySelectorAll('.card, .education-item, .project-card').forEach(element => {
   element.style.opacity = '0';
   observer.observe(element);
 });
