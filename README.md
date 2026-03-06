@@ -1,4 +1,4 @@
-# Sonu Sharma - Professional Portfolio
+# Sonu Kumar Sharma - Professional Portfolio
 
 A modern, multi-page portfolio website built with pure HTML, CSS, and JavaScript. Showcase your achievements, projects, technologies, and educational background in a professional and interactive manner.
 
