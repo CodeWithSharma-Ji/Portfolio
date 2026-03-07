@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const menuToggle = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
 
-  if (menuToggle) {
+  if (menuToggle && navLinks) {
     menuToggle.addEventListener('click', function () {
       navLinks.classList.toggle('active');
     });
@@ -13,12 +13,17 @@ document.addEventListener('DOMContentLoaded', function () {
   const navItems = document.querySelectorAll('.nav-links a');
   navItems.forEach(item => {
     item.addEventListener('click', function () {
-      navLinks.classList.remove('active');
+      if (navLinks) {
+        navLinks.classList.remove('active');
+      }
     });
   });
 
   // Set active navigation link based on current page
   setActiveNavLink();
+
+  // Show enlarged circular profile image on avatar click
+  setupAvatarPopup();
 });
 
 // Function to set active navigation link
@@ -39,14 +44,23 @@ function setActiveNavLink() {
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
+    const href = this.getAttribute('href');
+
+    // Allow normal behavior for empty hashes or missing targets.
+    if (!href || href === '#') {
+      return;
     }
+
+    const target = document.querySelector(href);
+    if (!target) {
+      return;
+    }
+
+    e.preventDefault();
+    target.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
   });
 });
 
@@ -70,3 +84,43 @@ document.querySelectorAll('.card, .education-item, .project-card').forEach(eleme
   element.style.opacity = '0';
   observer.observe(element);
 });
+
+function setupAvatarPopup() {
+  const avatar = document.querySelector('.logo-avatar');
+  if (!avatar) {
+    return;
+  }
+
+  const modal = document.createElement('div');
+  modal.className = 'avatar-modal';
+  modal.innerHTML = `<img src="${avatar.getAttribute('src')}" alt="${avatar.getAttribute('alt') || 'Profile'}" class="avatar-modal-image">`;
+  document.body.appendChild(modal);
+
+  const openModal = () => {
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeModal = () => {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  avatar.addEventListener('click', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    openModal();
+  });
+
+  modal.addEventListener('click', function (e) {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal.classList.contains('open')) {
+      closeModal();
+    }
+  });
+}
