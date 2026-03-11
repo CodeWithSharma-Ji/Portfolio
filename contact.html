@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Sonu Kumar Sharma</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <!-- Header & Navigation -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="index.html" class="logo">
+          <img src="IMG_20251124_122340.jpg" alt="Sonu Kumar Sharma" class="logo-avatar">
+          <span>Sonu Kumar Sharma</span>
+        </a>
+        <div class="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="technologies.html">Technologies</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Contact Me</h1>
+      <p>Let us discuss your project, role, or collaboration idea</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main>
+    <div class="container">
+      <section>
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-layout">
+          <article class="card contact-info-card">
+            <h3>Contact Details</h3>
+            <p>You can reach me directly or send a message using the form.</p>
+            <ul class="contact-list">
+              <li><strong>Email:</strong> <a href="mailto:sonuk663541@gmail.com">sonuk663541@gmail.com</a></li>
+              <li><strong>GitHub:</strong> <a href="https://github.com/CodeWithSharma-Ji/" target="_blank" rel="noopener noreferrer">CodeWithSharma-Ji</a></li>
+              <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/CodeWithSharma-Ji/" target="_blank" rel="noopener noreferrer">CodeWithSharma-Ji</a></li>
+            </ul>
+            <p class="contact-note">
+              EmailJS is configured on this page. Replace placeholder IDs in <code>js/contact.js</code> with your real EmailJS keys.
+            </p>
+          </article>
+
+          <article class="card contact-form-card">
+            <h3>Send a Message</h3>
+            <form id="contact-form" class="contact-form" novalidate>
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="How can I help?" required>
+
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" placeholder="Write your message..." required></textarea>
+
+              <button type="submit" class="cta-button" id="send-btn">Send Message</button>
+              <p id="form-status" class="form-status" aria-live="polite"></p>
+            </form>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="social-links">
+        <a href="https://github.com/CodeWithSharma-Ji/" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://linkedin.com/in/CodeWithSharma-Ji/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+        <a href="mailto:sonuk663541@gmail.com">Email</a>
+      </div>
+      <p>&copy; 2026 Sonu Kumar Sharma. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>
