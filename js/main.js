@@ -1,4 +1,3 @@
-// Mobile Menu Toggle
 document.addEventListener('DOMContentLoaded', function () {
   const menuToggle = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
@@ -9,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Close menu when a link is clicked
   const navItems = document.querySelectorAll('.nav-links a');
   navItems.forEach(item => {
     item.addEventListener('click', function () {
@@ -19,14 +17,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Set active navigation link based on current page
   setActiveNavLink();
 
-  // Show enlarged circular profile image on avatar click
   setupAvatarPopup();
 });
 
-// Function to set active navigation link
 function setActiveNavLink() {
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   const navLinks = document.querySelectorAll('.nav-links a');
@@ -35,36 +30,12 @@ function setActiveNavLink() {
     link.classList.remove('active');
     const href = link.getAttribute('href');
     
-    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+    if (href === currentPage) {
       link.classList.add('active');
     }
   });
 }
 
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    const href = this.getAttribute('href');
-
-    // Allow normal behavior for empty hashes or missing targets.
-    if (!href || href === '#') {
-      return;
-    }
-
-    const target = document.querySelector(href);
-    if (!target) {
-      return;
-    }
-
-    e.preventDefault();
-    target.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    });
-  });
-});
-
-// Add animation on scroll
 const observerOptions = {
   threshold: 0.1,
   rootMargin: '0px 0px -50px 0px'
@@ -79,7 +50,6 @@ const observer = new IntersectionObserver(function (entries) {
   });
 }, observerOptions);
 
-// Observe all cards and items for animation
 document.querySelectorAll('.card, .education-item, .project-card').forEach(element => {
   element.style.opacity = '0';
   observer.observe(element);
