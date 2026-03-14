@@ -239,6 +239,12 @@ function setupAvatarPopup() {
     return;
   }
 
+  // Do not hijack clicks when the avatar is part of the logo link.
+  // Navigation should remain the primary action in the header.
+  if (avatar.closest('a[href]')) {
+    return;
+  }
+
   const modal = document.createElement('div');
   modal.className = 'avatar-modal';
   modal.innerHTML = `<img src="${avatar.getAttribute('src')}" alt="${avatar.getAttribute('alt') || 'Profile'}" class="avatar-modal-image">`;

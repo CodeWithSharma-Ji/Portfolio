@@ -20,7 +20,7 @@ This site presents Sonu Kumar Sharma's profile, skills, education, certification
 - light and dark theme toggle with saved preference
 - active navigation highlighting
 - mobile hamburger menu with animated open state
-- clickable profile avatar preview modal
+- clickable header logo that always returns to the homepage
 - featured cybersecurity certificate with view-only modal preview
 - animated cards and section reveal effects
 - EmailJS-ready contact form
@@ -64,7 +64,7 @@ Portfolio/
 No build step is required.
 
 1. Open `index.html` in a browser.
-2. Navigate through the pages to verify layout, theme switching, mobile navigation, and modal previews.
+2. Navigate through the pages to verify layout, theme switching, mobile navigation, and homepage logo link behavior.
 3. Open `education.html` and use the certificate button to test the certificate viewer.
 4. Open `contact.html` to test the contact form UI.
 
