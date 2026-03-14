@@ -1,37 +1,34 @@
 # Sonu Kumar Sharma Portfolio
 
-A responsive multi-page portfolio website built with HTML, CSS, and JavaScript. The site presents Sonu Kumar Sharma's profile, skills, projects, education, certifications, and contact details in a clean light/dark theme experience.
+A responsive multi-page portfolio website built with HTML, CSS, and vanilla JavaScript.
 
-## Overview
+This site presents Sonu Kumar Sharma's profile, skills, education, certifications, projects, and contact details with a shared navigation system, light/dark theme support, and mobile-friendly layouts.
 
-This portfolio is a static website with:
+## Current Website Sections
 
-- a dedicated home page
-- an about page with skills and certifications
-- a projects page with live project and GitHub links
-- a technologies page with categorized tech stacks
-- an education page with academic and certification details
-- a contact page with an EmailJS-powered contact form
-
-## Pages
-
-- `index.html` - landing page, value proposition, and quick links
-- `about.html` - bio, key skills, and certifications
-- `projects.html` - featured project showcase and GitHub call-to-action
+- `index.html` - homepage with introduction, strengths, and quick links
+- `about.html` - personal summary, key skills, and certification highlights
+- `projects.html` - featured project showcase with live and GitHub links
 - `technologies.html` - frontend, backend, tools, and proficiency sections
-- `education.html` - formal education, certification summary, and learning path
-- `contact.html` - contact details and working contact form UI
+- `education.html` - formal education, learning summary, and featured certificate viewer
+- `contact.html` - contact details and EmailJS-ready contact form
 
-## Features
+## Current Features
 
 - responsive multi-page layout
+- shared navbar across all pages
 - light and dark theme toggle with saved preference
-- dark-mode interaction effects for navbar, call-to-action buttons, and project links
-- mobile navigation menu
 - active navigation highlighting
-- profile avatar popup preview
-- scroll-in card animations
-- EmailJS contact form integration
+- mobile hamburger menu with animated open state
+- clickable profile avatar preview modal
+- featured cybersecurity certificate with view-only modal preview
+- animated cards and section reveal effects
+- EmailJS-ready contact form
+
+## Current Assets
+
+- `assets/IMG_20251124_122340.jpg` - navbar/profile logo image
+- `assets/cyber-security-certificate.jpeg` - featured certificate preview
 
 ## Tech Stack
 
@@ -44,33 +41,38 @@ This portfolio is a static website with:
 
 ```text
 Portfolio/
+|-- assets/
+|   |-- cyber-security-certificate.jpeg
+|   `-- IMG_20251124_122340.jpg
+|-- js/
+|   |-- contact.js
+|   |-- main.js
+|   `-- theme-init.js
+|-- styles/
+|   `-- style.css
 |-- about.html
 |-- contact.html
 |-- education.html
 |-- index.html
 |-- projects.html
 |-- technologies.html
-|-- IMG_20251124_122340.jpg
-|-- README.md
-|-- js/
-|   |-- contact.js
-|   |-- main.js
-|   `-- theme-init.js
-`-- styles/
-    `-- style.css
+`-- README.md
 ```
 
-## Local Setup
+## Local Usage
 
 No build step is required.
 
 1. Open `index.html` in a browser.
-2. Navigate through the pages to verify links, theme toggle, and animations.
-3. If you want the contact form to send real emails, configure EmailJS in `js/contact.js`.
+2. Navigate through the pages to verify layout, theme switching, mobile navigation, and modal previews.
+3. Open `education.html` and use the certificate button to test the certificate viewer.
+4. Open `contact.html` to test the contact form UI.
 
-## EmailJS Setup
+## Contact Form Setup
 
-Update the values in `js/contact.js`:
+The contact form uses EmailJS, but the repo still contains placeholder keys.
+
+Update `js/contact.js` with your real values:
 
 ```js
 const EMAILJS_CONFIG = {
@@ -80,33 +82,28 @@ const EMAILJS_CONFIG = {
 };
 ```
 
-After replacing those placeholders with real EmailJS values, the contact form can send messages directly from the site.
+After replacing the placeholders, the contact form can send messages directly from the website.
 
-## Customization
+## Current Content Snapshot
 
-### Update content
+- featured project: Garbage Reporting System
+- featured certificate: Program in Cyber Security
+- current education highlight: BCA at KCC Institute of Legal and Higher Education
 
-- edit page text in the HTML files
-- replace project links in `projects.html`
-- update education and certification details in `education.html` and `about.html`
-- update footer and contact links across the pages
+## Files To Customize
 
-### Update styling
-
-Theme colors, animations, layout, and responsive rules live in `styles/style.css`.
-
-### Update interactions
-
-Shared site behavior lives in `js/main.js`.
-
-Theme initialization before page paint is handled by `js/theme-init.js`.
+- update page content in the HTML files
+- update the main design system in `styles/style.css`
+- update shared interactions in `js/main.js`
+- update EmailJS settings in `js/contact.js`
+- replace images inside `assets/` when needed
 
 ## Notes
 
-- The website is fully static, so it can be hosted on GitHub Pages, Netlify, Vercel, or any basic web host.
-- The contact form UI works without a backend, but actual email sending requires valid EmailJS credentials.
-- The current design includes stronger motion effects in dark mode and calmer styling in light mode.
+- this is a static website and can be hosted on GitHub Pages, Netlify, Vercel, or any static host
+- the contact form will not send messages until valid EmailJS credentials are added
+- the certificate preview is view-only in the UI, but browsers cannot fully prevent screenshots or determined downloads
 
 ## Last Updated
 
-March 13, 2026
+March 14, 2026

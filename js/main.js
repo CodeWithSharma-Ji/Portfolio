@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', function () {
   setupNavigation();
   setActiveNavLink();
   setupAvatarPopup();
+  setupCertificatePreview();
+  setupViewOnlyMedia();
   setupThemeToggle();
   setupNavbarSparkles();
   setupRevealAnimations();
@@ -12,6 +14,9 @@ function setupNavigation() {
   const menuToggle = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
   const navItems = document.querySelectorAll('.nav-links a');
+  const navRight = navLinks ? navLinks.closest('.nav-right') : null;
+  const navContainer = menuToggle ? menuToggle.closest('nav') : null;
+  const mobileMediaQuery = window.matchMedia('(max-width: 768px)');
 
   if (!menuToggle || !navLinks) {
     return;
@@ -26,10 +31,19 @@ function setupNavigation() {
   menuToggle.setAttribute('aria-controls', navLinks.id);
   menuToggle.setAttribute('aria-expanded', 'false');
   menuToggle.setAttribute('aria-label', 'Toggle navigation menu');
+  navLinks.setAttribute('aria-hidden', 'true');
 
   const setMenuState = function (isOpen) {
     navLinks.classList.toggle('active', isOpen);
+    menuToggle.classList.toggle('is-open', isOpen);
+    if (navContainer) {
+      navContainer.classList.toggle('menu-open', isOpen);
+    }
+    if (navRight) {
+      navRight.classList.toggle('menu-open', isOpen);
+    }
     menuToggle.setAttribute('aria-expanded', String(isOpen));
+    navLinks.setAttribute('aria-hidden', String(!isOpen));
   };
 
   menuToggle.addEventListener('click', function () {
@@ -49,6 +63,24 @@ function setupNavigation() {
     item.addEventListener('click', function () {
       setMenuState(false);
     });
+  });
+
+  document.addEventListener('click', function (event) {
+    if (!navLinks.classList.contains('active')) {
+      return;
+    }
+
+    if (menuToggle.contains(event.target) || navLinks.contains(event.target)) {
+      return;
+    }
+
+    setMenuState(false);
+  });
+
+  mobileMediaQuery.addEventListener('change', function (event) {
+    if (!event.matches) {
+      setMenuState(false);
+    }
   });
 }
 
@@ -237,5 +269,82 @@ function setupAvatarPopup() {
     if (event.key === 'Escape' && modal.classList.contains('open')) {
       closeModal();
     }
+  });
+}
+
+function setupCertificatePreview() {
+  const trigger = document.querySelector('.certificate-trigger');
+  if (!trigger) {
+    return;
+  }
+
+  const imageSrc = trigger.getAttribute('data-certificate-src');
+  const imageAlt = trigger.getAttribute('data-certificate-alt') || 'Certificate preview';
+  if (!imageSrc) {
+    return;
+  }
+
+  const modal = document.createElement('div');
+  modal.className = 'certificate-modal';
+  modal.innerHTML = `
+    <div class="certificate-modal-dialog" role="dialog" aria-modal="true" aria-label="Certificate preview">
+      <button type="button" class="certificate-modal-close" aria-label="Close certificate preview">Close</button>
+      <span class="view-only-badge certificate-modal-badge">View Only</span>
+      <img src="${imageSrc}" alt="${imageAlt}" class="certificate-modal-image view-only-media" loading="lazy" decoding="async" draggable="false">
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  const closeButton = modal.querySelector('.certificate-modal-close');
+
+  const openModal = function () {
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeModal = function () {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  trigger.addEventListener('click', function () {
+    openModal();
+  });
+
+  if (closeButton) {
+    closeButton.addEventListener('click', function () {
+      closeModal();
+    });
+  }
+
+  modal.addEventListener('click', function (event) {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && modal.classList.contains('open')) {
+      closeModal();
+    }
+  });
+}
+
+function setupViewOnlyMedia() {
+  const mediaItems = document.querySelectorAll('.view-only-media');
+  if (!mediaItems.length) {
+    return;
+  }
+
+  mediaItems.forEach(function (media) {
+    media.setAttribute('draggable', 'false');
+
+    media.addEventListener('contextmenu', function (event) {
+      event.preventDefault();
+    });
+
+    media.addEventListener('dragstart', function (event) {
+      event.preventDefault();
+    });
   });
 }
