@@ -1446,6 +1446,11 @@ footer {
     top: 0.8rem;
     right: 5.8rem;
   }
+
+  .social-links{
+    display: none;
+  }
+
 }
 
 @media (max-width: 480px) {
@@ -1493,6 +1498,12 @@ footer {
     width: 100%;
     text-align: center;
   }
+
+  .foot p{
+    font-size: x-small;
+  }
+  
+  
 }
 
 @media (max-width: 360px) {
