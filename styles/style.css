@@ -783,7 +783,8 @@ html[data-theme='dark'] .project-links a:focus-visible::before {
     radial-gradient(circle at top right, rgba(248, 224, 140, 0.28), transparent 38%),
     linear-gradient(145deg, var(--surface-color), var(--surface-muted));
   box-shadow: var(--shadow-soft);
-  webkit-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .certificate-actions {
@@ -1259,14 +1260,14 @@ footer {
 
 @media (max-width: 768px) {
   nav {
+    position: relative;
     gap: 0.55rem;
     flex-wrap: nowrap;
     align-items: center;
   }
 
-  nav.menu-open {
-    flex-wrap: wrap;
-    align-items: flex-start;
+  body.mobile-menu-open .hero {
+    display: none;
   }
 
   .hero h1 {
@@ -1283,7 +1284,10 @@ footer {
 
   .nav-links {
     display: none;
-    width: 100%;
+    position: absolute;
+    top: calc(100% + 0.55rem);
+    right: 0;
+    width: min(320px, calc(100vw - 2rem));
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: stretch;
@@ -1295,7 +1299,7 @@ footer {
     border: 1px solid var(--border-color);
     border-radius: 18px;
     box-shadow: var(--shadow-strong);
-    order: 3;
+    z-index: 120;
   }
 
   .nav-links a {
@@ -1309,7 +1313,6 @@ footer {
 
   .nav-links.active {
     display: flex;
-    margin-top: 0.35rem;
     animation: mobileMenuReveal 0.32s ease both;
   }
 
@@ -1354,6 +1357,7 @@ footer {
 
   .nav-right {
     flex: 0 0 auto;
+    position: relative;
     flex-wrap: nowrap;
     justify-content: flex-end;
     align-items: center;
@@ -1363,10 +1367,7 @@ footer {
   }
 
   .nav-right.menu-open {
-    flex: 1 1 100%;
-    flex-wrap: wrap;
-    margin-top: 0.55rem;
-    row-gap: 0.55rem;
+    flex: 0 0 auto;
   }
 
   .logo {

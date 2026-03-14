@@ -42,6 +42,7 @@ function setupNavigation() {
     if (navRight) {
       navRight.classList.toggle('menu-open', isOpen);
     }
+    document.body.classList.toggle('mobile-menu-open', isOpen && mobileMediaQuery.matches);
     menuToggle.setAttribute('aria-expanded', String(isOpen));
     navLinks.setAttribute('aria-hidden', String(!isOpen));
   };
