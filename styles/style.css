@@ -988,21 +988,24 @@ html[data-theme='dark'] .contact-form .cta-button[disabled]::before {
 footer {
   background: var(--footer-bg);
   color: var(--white);
-  padding: 2rem;
-  margin-top: 3rem;
+  padding: 1rem;
   text-align: center;
 }
 
-.social-links {
-  margin-bottom: 1rem;
+.foot {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-around;
 }
+
 
 .social-links a {
   color: var(--white);
   text-decoration: none;
   margin: 0 1rem;
   transition: color 0.3s ease;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .social-links a:hover {
@@ -1443,6 +1446,11 @@ footer {
     top: 0.8rem;
     right: 5.8rem;
   }
+
+  .social-links{
+    display: none;
+  }
+
 }
 
 @media (max-width: 480px) {
@@ -1490,6 +1498,12 @@ footer {
     width: 100%;
     text-align: center;
   }
+
+  .foot p{
+    font-size: x-small;
+  }
+  
+  
 }
 
 @media (max-width: 360px) {
