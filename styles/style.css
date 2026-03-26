@@ -409,7 +409,14 @@ main {
   margin-top: 2rem;
 }
 
-.card {
+/* Base Card Styles */
+.card,
+.feature-card,
+.link-card,
+.skill-card,
+.cert-card,
+.tech-card,
+.additional-card {
   background: var(--surface-color);
   border-radius: 8px;
   padding: 2rem;
@@ -419,20 +426,68 @@ main {
   border-top: 4px solid var(--primary-color);
 }
 
-.card:hover {
+.card:hover,
+.feature-card:hover,
+.link-card:hover,
+.skill-card:hover,
+.cert-card:hover,
+.tech-card:hover,
+.additional-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-strong);
 }
 
-.card h3 {
+.card h3,
+.feature-card h3,
+.link-card h3,
+.skill-card h3,
+.cert-card h3,
+.tech-card h3,
+.additional-card h3 {
   color: var(--primary-color);
   margin-bottom: 1rem;
   font-size: 1.5rem;
 }
 
-.card p {
+.card p,
+.feature-card p,
+.link-card p,
+.skill-card p,
+.cert-card p,
+.tech-card p,
+.additional-card p {
   color: var(--text-light);
   line-height: 1.8;
+}
+
+/* Feature Card Specific */
+.feature-card {
+  border-top-color: #38bdf8;
+}
+
+/* Link Card Specific */
+.link-card {
+  border-top-color: #0ea5e9;
+}
+
+/* Skill Card Specific */
+.skill-card {
+  border-top-color: #06b6d4;
+}
+
+/* Certification Card Specific */
+.cert-card {
+  border-top-color: #d4af37;
+}
+
+/* Tech Card Specific */
+.tech-card {
+  border-top-color: #10b981;
+}
+
+/* Additional Card Specific */
+.additional-card {
+  border-top-color: #8b5cf6;
 }
 
 /* Technology Tags */
@@ -487,7 +542,7 @@ main {
 }
 
 /* Info Box */
-.info-box {
+.info-section {
   margin-top: 4rem;
   background: var(--surface-color);
   padding: 2rem;
@@ -497,7 +552,7 @@ main {
   box-shadow: var(--shadow-soft);
 }
 
-.info-box p {
+.info-section p {
   color: var(--text-light);
   margin: 1rem 0;
 }
@@ -888,6 +943,16 @@ html[data-theme='dark'] .project-links a:focus-visible::before {
 }
 
 /* Contact */
+.contact-card {
+  background: var(--surface-color);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--border-color);
+  border-top: 4px solid var(--primary-color);
+}
+
 .contact-layout {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
