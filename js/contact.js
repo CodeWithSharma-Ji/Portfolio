@@ -11,18 +11,18 @@ function isEmailJsConfigured() {
 }
 
 function setFormStatus(message, type) {
-  const formStatus = document.getElementById("form-status");
+  const formStatus = document.getElementById("pf-contact-form-status-msg");
   if (!formStatus) {
     return;
   }
 
   formStatus.textContent = message;
-  formStatus.classList.remove("status-success", "status-error", "status-info");
+  formStatus.classList.remove("pf-form-status-success", "pf-form-status-error", "pf-form-status-info");
   formStatus.classList.add(type);
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("contact-form");
+  const form = document.getElementById("pf-contact-form-element");
   const sendButton = document.getElementById("send-btn");
 
   if (!form || !sendButton) {
@@ -30,12 +30,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   if (!window.emailjs) {
-    setFormStatus("Email service failed to load. Please refresh the page.", "status-error");
+    setFormStatus("Email service failed to load. Please refresh the page.", "pf-form-status-error");
     return;
   }
 
   if (!isEmailJsConfigured()) {
-    setFormStatus("Set EmailJS keys in js/contact.js before sending messages.", "status-info");
+    setFormStatus("Set EmailJS keys in js/contact.js before sending messages.", "pf-form-status-info");
     return;
   }
 
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     sendButton.disabled = true;
     sendButton.textContent = "Sending...";
-    setFormStatus("Sending your message...", "status-info");
+    setFormStatus("Sending your message...", "pf-form-status-info");
 
     try {
       await window.emailjs.send(
@@ -70,9 +70,9 @@ document.addEventListener("DOMContentLoaded", function () {
         templateParams
       );
       form.reset();
-      setFormStatus("Message sent successfully. I will get back to you soon.", "status-success");
+      setFormStatus("Message sent successfully. I will get back to you soon.", "pf-form-status-success");
     } catch (error) {
-      setFormStatus("Message failed to send. Please try again.", "status-error");
+      setFormStatus("Message failed to send. Please try again.", "pf-form-status-error");
       console.error("EmailJS send failed:", error);
     } finally {
       sendButton.disabled = false;

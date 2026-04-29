@@ -8,92 +8,136 @@
   <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <nav>
-        <div class="nav-left">
-          <a href="index.html" class="logo">
-            <img src="assets/IMG_20251124_122340.jpg" alt="Sonu Kumar Sharma" class="logo-avatar">
-            <span>Sonu Kumar Sharma</span>
-          </a>
+  <!-- Ambient Background -->
+  <div class="pf-ambient-background-layer">
+    <div class="pf-ambient-glow-blob-1"></div>
+    <div class="pf-ambient-glow-blob-2"></div>
+  </div>
+  <div class="pf-ambient-background-layer pf-wireframe-pattern-bg"></div>
+
+  <!-- Navbar -->
+  <header class="pf-site-header-navbar">
+    <div class="pf-layout-container">
+      <a href="index.html" class="pf-navbar-brand-logo">
+        <span>Sonu Kumar Sharma</span>
+      </a>
+      
+      <div class="pf-navbar-right-section">
+        <ul class="pf-navbar-navigation-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html" class="pf-state-active">Contact</a></li>
+        </ul>
+
+        <div style="display: flex; align-items: center;">
+          <button type="button" class="pf-theme-switcher-button" aria-label="Switch theme" title="Switch theme">
+            <div class="pf-theme-switcher-icon-wrapper">
+              <span class="material-symbols-outlined pf-icon-mode-light">light_mode</span>
+              <span class="material-symbols-outlined pf-icon-mode-dark">dark_mode</span>
+            </div>
+            <span class="pf-theme-switcher-label">
+              <span class="pf-theme-label-light">Light</span>
+              <span class="pf-theme-label-dark">Dark</span>
+            </span>
+          </button>
         </div>
-        <div class="nav-right">
-          <div class="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="technologies.html">Technologies</a></li>
-            <li><a href="education.html">Education</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
+      </div>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <h1>Contact Me</h1>
-      <p>Let us discuss your project, role, or collaboration idea</p>
-    </div>
-  </section>
-
   <main>
-    <div class="container">
-      <section>
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-layout">
-          <article class="card contact-info-card">
-            <h3>Contact Details</h3>
-            <p>You can reach me directly or send a message using the form.</p>
-            <ul class="contact-list">
-              <li><strong>Email:</strong> <a href="mailto:sonuk663541@gmail.com">sonuk663541@gmail.com</a></li>
-              <li><strong>GitHub:</strong> <a href="https://github.com/CodeWithSharma-Ji/" target="_blank" rel="noopener noreferrer">CodeWithSharma-Ji</a></li>
-              <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/CodeWithSharma-Ji/" target="_blank" rel="noopener noreferrer">CodeWithSharma-Ji</a></li>
-            </ul>
-            <p class="contact-note">
-              This form is ready for EmailJS. Add your real keys in <code>js/contact.js</code> to enable live message delivery.
-            </p>
-          </article>
+    <div class="pf-layout-container">
+      <div class="pf-page-title-header">
+        <h1 class="pf-heading-primary pf-margin-bottom-4 pf-gradient-text-effect">Contact Me</h1>
+        <p class="pf-text-body-large pf-text-surface-variant">Let us discuss your project, role, or collaboration idea</p>
+      </div>
 
-          <article class="card contact-form-card">
-            <h3>Send a Message</h3>
-            <form id="contact-form" class="contact-form" novalidate>
-              <label for="name">Full Name</label>
-              <input type="text" id="name" name="name" placeholder="Your full name" required>
+      <section class="pf-contact-layout-grid pf-margin-bottom-16">
+        <article class="pf-glassmorphism-card pf-interactive-glow-hover">
+          <h2 class="pf-heading-secondary pf-margin-bottom-4">Get In Touch</h2>
+          <p class="pf-text-body-large pf-text-surface-variant pf-margin-bottom-8">You can reach me directly or send a message using the form.</p>
+          
+          <div class="pf-margin-bottom-6">
+            <h3 class="pf-text-label-uppercase pf-text-surface-variant pf-margin-bottom-2">Email</h3>
+            <a href="mailto:sonuk663541@gmail.com" class="pf-text-primary-color" style="text-decoration: none;">sonuk663541@gmail.com</a>
+          </div>
+          
+          <div class="pf-margin-bottom-6">
+            <h3 class="pf-text-label-uppercase pf-text-surface-variant pf-margin-bottom-2">GitHub</h3>
+            <a href="https://github.com/CodeWithSharma-Ji/" target="_blank" rel="noopener noreferrer" class="pf-text-primary-color" style="text-decoration: none;">CodeWithSharma-Ji</a>
+          </div>
 
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          <div class="pf-margin-bottom-8">
+            <h3 class="pf-text-label-uppercase pf-text-surface-variant pf-margin-bottom-2">LinkedIn</h3>
+            <a href="https://linkedin.com/in/CodeWithSharma-Ji/" target="_blank" rel="noopener noreferrer" class="pf-text-primary-color" style="text-decoration: none;">CodeWithSharma-Ji</a>
+          </div>
 
-              <label for="subject">Subject</label>
-              <input type="text" id="subject" name="subject" placeholder="How can I help?" required>
+          <p class="pf-text-label-uppercase pf-text-surface-variant" style="opacity: 0.6; font-size: 0.65rem;">
+            This form is ready for EmailJS. Add your real keys in js/contact.js to enable live message delivery.
+          </p>
+        </article>
 
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="6" placeholder="Write your message..." required></textarea>
+        <article class="pf-glassmorphism-card">
+          <h3 class="pf-heading-tertiary pf-margin-bottom-6">Send a Message</h3>
+          <form id="contact-form" class="pf-contact-form-element" novalidate>
+            <div class="pf-contact-form-group">
+              <label for="name" class="pf-contact-form-label">Full Name</label>
+              <input type="text" id="name" name="name" class="pf-contact-form-input" placeholder="Your full name" required>
+            </div>
 
-              <button type="submit" class="cta-button" id="send-btn">Send Message</button>
-              <p id="form-status" class="form-status" aria-live="polite"></p>
-            </form>
-          </article>
-        </div>
+            <div class="pf-contact-form-group">
+              <label for="email" class="pf-contact-form-label">Email Address</label>
+              <input type="email" id="email" name="email" class="pf-contact-form-input" placeholder="you@example.com" required>
+            </div>
+
+            <div class="pf-contact-form-group">
+              <label for="subject" class="pf-contact-form-label">Subject</label>
+              <input type="text" id="subject" name="subject" class="pf-contact-form-input" placeholder="How can I help?" required>
+            </div>
+
+            <div class="pf-contact-form-group">
+              <label for="message" class="pf-contact-form-label">Message</label>
+              <textarea id="message" name="message" class="pf-contact-form-textarea" placeholder="Write your message..." required></textarea>
+            </div>
+
+            <button type="submit" class="pf-action-button-primary" id="send-btn" style="width: 100%;">Send Message</button>
+            <p id="form-status" class="pf-contact-form-status-msg" aria-live="polite" style="margin-top: 16px; text-align: center; font-size: 0.875rem; color: var(--color-on-surface-variant);"></p>
+          </form>
+        </article>
       </section>
     </div>
   </main>
 
-  <footer>
-    <div class="foot">
-      <div class="social-links">
-        <a href="https://github.com/CodeWithSharma-Ji/" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://linkedin.com/in/CodeWithSharma-Ji/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
-        <a href="mailto:sonuk663541@gmail.com">Email</a>
-      </div>
-      <p>&copy; 2026 Sonu Kumar Sharma. All Rights Reserved.</p>
+  <!-- Mobile Bottom Navigation -->
+  <nav class="pf-mobile-bottom-navigation">
+    <a href="index.html" class="pf-mobile-nav-item">
+      <span class="material-symbols-outlined">home</span>
+      <span class="pf-mobile-nav-label">Home</span>
+    </a>
+    <a href="about.html" class="pf-mobile-nav-item">
+      <span class="material-symbols-outlined">person</span>
+      <span class="pf-mobile-nav-label">About</span>
+    </a>
+    <a href="projects.html" class="pf-mobile-nav-item">
+      <span class="material-symbols-outlined">code</span>
+      <span class="pf-mobile-nav-label">Projects</span>
+    </a>
+    <a href="contact.html" class="pf-mobile-nav-item">
+      <span class="material-symbols-outlined">mail</span>
+      <span class="pf-mobile-nav-label">Contact</span>
+    </a>
+  </nav>
+
+  <footer class="pf-site-footer">
+    <div class="pf-layout-container">
+      <p class="pf-footer-copyright-text">&copy; 2026 Sonu Kumar Sharma. All Rights Reserved.</p>
+      <ul class="pf-footer-navigation-links">
+        <li><a href="https://github.com/CodeWithSharma-Ji/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://linkedin.com/in/CodeWithSharma-Ji/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+        <li><a href="mailto:sonuk663541@gmail.com">Email</a></li>
+      </ul>
     </div>
   </footer>
 

@@ -7,14 +7,13 @@ document.addEventListener('DOMContentLoaded', function () {
   setupViewOnlyMedia();
   setupThemeToggle();
   setupNavbarSparkles();
-  setupRevealAnimations();
 });
 
 function setupNavigation() {
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
-  const navItems = document.querySelectorAll('.nav-links a');
-  const navRight = navLinks ? navLinks.closest('.nav-right') : null;
+  const menuToggle = document.querySelector('.pf-mobile-menu-toggle-btn');
+  const navLinks = document.querySelector('.pf-navbar-navigation-list');
+  const navItems = document.querySelectorAll('.pf-navbar-navigation-list a');
+  const navRight = navLinks ? navLinks.closest('.pf-navbar-right-section') : null;
   const navContainer = menuToggle ? menuToggle.closest('nav') : null;
   const mobileMediaQuery = window.matchMedia('(max-width: 768px)');
 
@@ -34,21 +33,21 @@ function setupNavigation() {
   navLinks.setAttribute('aria-hidden', 'true');
 
   const setMenuState = function (isOpen) {
-    navLinks.classList.toggle('active', isOpen);
-    menuToggle.classList.toggle('is-open', isOpen);
+    navLinks.classList.toggle('pf-state-active', isOpen);
+    menuToggle.classList.toggle('pf-state-is-open', isOpen);
     if (navContainer) {
-      navContainer.classList.toggle('menu-open', isOpen);
+      navContainer.classList.toggle('pf-state-menu-open', isOpen);
     }
     if (navRight) {
-      navRight.classList.toggle('menu-open', isOpen);
+      navRight.classList.toggle('pf-state-menu-open', isOpen);
     }
-    document.body.classList.toggle('mobile-menu-open', isOpen && mobileMediaQuery.matches);
+    document.body.classList.toggle('pf-state-mobile-menu-open', isOpen && mobileMediaQuery.matches);
     menuToggle.setAttribute('aria-expanded', String(isOpen));
     navLinks.setAttribute('aria-hidden', String(!isOpen));
   };
 
   menuToggle.addEventListener('click', function () {
-    setMenuState(!navLinks.classList.contains('active'));
+    setMenuState(!navLinks.classList.contains('pf-state-active'));
   });
 
   menuToggle.addEventListener('keydown', function (event) {
@@ -57,7 +56,7 @@ function setupNavigation() {
     }
 
     event.preventDefault();
-    setMenuState(!navLinks.classList.contains('active'));
+    setMenuState(!navLinks.classList.contains('pf-state-active'));
   });
 
   navItems.forEach(function (item) {
@@ -67,7 +66,7 @@ function setupNavigation() {
   });
 
   document.addEventListener('click', function (event) {
-    if (!navLinks.classList.contains('active')) {
+    if (!navLinks.classList.contains('pf-state-active')) {
       return;
     }
 
@@ -87,13 +86,13 @@ function setupNavigation() {
 
 function setActiveNavLink() {
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  const navLinks = document.querySelectorAll('.nav-links a');
+  const navLinks = document.querySelectorAll('.pf-navbar-navigation-list a');
 
   navLinks.forEach(function (link) {
-    link.classList.remove('active');
+    link.classList.remove('pf-state-active');
 
     if (link.getAttribute('href') === currentPage) {
-      link.classList.add('active');
+      link.classList.add('pf-state-active');
     }
   });
 }
@@ -104,40 +103,29 @@ function initializeTheme() {
 }
 
 function setupThemeToggle() {
-  const navRight = document.querySelector('.nav-right');
-  if (!navRight || document.querySelector('.theme-toggle')) {
+  const buttons = document.querySelectorAll('.pf-theme-switcher-button');
+  
+  if (!buttons.length) {
     return;
   }
 
-  const button = document.createElement('button');
-  button.type = 'button';
-  button.className = 'theme-toggle';
-
-  const menuToggle = navRight.querySelector('.menu-toggle');
-  if (menuToggle) {
-    navRight.insertBefore(button, menuToggle);
-  } else {
-    navRight.appendChild(button);
-  }
-
-  const syncToggleLabel = function () {
-    const currentTheme = getCurrentTheme();
-    const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    button.textContent = currentTheme === 'dark' ? '\u2600' : '\u263E';
-    button.setAttribute('aria-pressed', String(currentTheme === 'dark'));
-    button.setAttribute('aria-label', `Switch to ${nextTheme} mode`);
-    button.setAttribute('title', `Switch to ${nextTheme} mode`);
-  };
-
-  button.addEventListener('click', function () {
-    const currentTheme = getCurrentTheme();
-    const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', nextTheme);
-    storeTheme(nextTheme);
-    syncToggleLabel();
+  buttons.forEach(button => {
+    button.addEventListener('click', function () {
+      const currentTheme = getCurrentTheme();
+      const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', nextTheme);
+      storeTheme(nextTheme);
+      
+      // Update ARIA attributes for accessibility
+      button.setAttribute('aria-pressed', String(nextTheme === 'dark'));
+      button.setAttribute('aria-label', `Switch to ${currentTheme} mode`);
+      button.setAttribute('title', `Switch to ${currentTheme} mode`);
+    });
+    
+    // Set initial ARIA state
+    const initialTheme = getCurrentTheme();
+    button.setAttribute('aria-pressed', String(initialTheme === 'dark'));
   });
-
-  syncToggleLabel();
 }
 
 function getCurrentTheme() {
@@ -165,7 +153,7 @@ function storeTheme(theme) {
 }
 
 function setupNavbarSparkles() {
-  const navbarButtons = document.querySelectorAll('.nav-links a, .theme-toggle');
+  const navbarButtons = document.querySelectorAll('.pf-navbar-navigation-list a, .pf-theme-switcher-button');
   if (!navbarButtons.length) {
     return;
   }
@@ -189,7 +177,7 @@ function createNavbarSparkles(button, event) {
 
   for (let index = 0; index < sparkCount; index += 1) {
     const sparkle = document.createElement('span');
-    sparkle.className = 'nav-sparkle';
+    sparkle.className = 'pf-navbar-interaction-sparkle';
     sparkle.style.left = `${originX}px`;
     sparkle.style.top = `${originY}px`;
 
@@ -207,34 +195,8 @@ function createNavbarSparkles(button, event) {
   }
 }
 
-function setupRevealAnimations() {
-  const revealItems = document.querySelectorAll('.card, .education-item, .project-card');
-  if (!revealItems.length || !('IntersectionObserver' in window)) {
-    return;
-  }
-
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-
-  const observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.style.animation = 'fadeIn 0.6s ease forwards';
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
-  revealItems.forEach(function (element) {
-    element.style.opacity = '0';
-    observer.observe(element);
-  });
-}
-
 function setupAvatarPopup() {
-  const avatar = document.querySelector('.logo-avatar');
+  const avatar = document.querySelector('.pf-logo-avatar-image');
   if (!avatar) {
     return;
   }
@@ -246,17 +208,17 @@ function setupAvatarPopup() {
   }
 
   const modal = document.createElement('div');
-  modal.className = 'avatar-modal';
-  modal.innerHTML = `<img src="${avatar.getAttribute('src')}" alt="${avatar.getAttribute('alt') || 'Profile'}" class="avatar-modal-image">`;
+  modal.className = 'pf-profile-avatar-modal';
+  modal.innerHTML = `<img src="${avatar.getAttribute('src')}" alt="${avatar.getAttribute('alt') || 'Profile'}" class="pf-avatar-modal-image">`;
   document.body.appendChild(modal);
 
   const openModal = function () {
-    modal.classList.add('open');
+    modal.classList.add('pf-state-open');
     document.body.style.overflow = 'hidden';
   };
 
   const closeModal = function () {
-    modal.classList.remove('open');
+    modal.classList.remove('pf-state-open');
     document.body.style.overflow = '';
   };
 
@@ -273,14 +235,14 @@ function setupAvatarPopup() {
   });
 
   document.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape' && modal.classList.contains('open')) {
+    if (event.key === 'Escape' && modal.classList.contains('pf-state-open')) {
       closeModal();
     }
   });
 }
 
 function setupCertificatePreview() {
-  const trigger = document.querySelector('.certificate-trigger');
+  const trigger = document.querySelector('.pf-certificate-preview-trigger');
   if (!trigger) {
     return;
   }
@@ -292,25 +254,25 @@ function setupCertificatePreview() {
   }
 
   const modal = document.createElement('div');
-  modal.className = 'certificate-modal';
+  modal.className = 'pf-certificate-preview-modal';
   modal.innerHTML = `
-    <div class="certificate-modal-dialog" role="dialog" aria-modal="true" aria-label="Certificate preview">
-      <button type="button" class="certificate-modal-close" aria-label="Close certificate preview">Close</button>
+    <div class="pf-certificate-modal-dialog-box" role="dialog" aria-modal="true" aria-label="Certificate preview">
+      <button type="button" class="pf-certificate-modal-close-btn" aria-label="Close certificate preview">Close</button>
       <span class="view-only-badge certificate-modal-badge">View Only</span>
       <img src="${imageSrc}" alt="${imageAlt}" class="certificate-modal-image view-only-media" loading="lazy" decoding="async" draggable="false">
     </div>
   `;
   document.body.appendChild(modal);
 
-  const closeButton = modal.querySelector('.certificate-modal-close');
+  const closeButton = modal.querySelector('.pf-certificate-modal-close-btn');
 
   const openModal = function () {
-    modal.classList.add('open');
+    modal.classList.add('pf-state-open');
     document.body.style.overflow = 'hidden';
   };
 
   const closeModal = function () {
-    modal.classList.remove('open');
+    modal.classList.remove('pf-state-open');
     document.body.style.overflow = '';
   };
 
@@ -331,14 +293,14 @@ function setupCertificatePreview() {
   });
 
   document.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape' && modal.classList.contains('open')) {
+    if (event.key === 'Escape' && modal.classList.contains('pf-state-open')) {
       closeModal();
     }
   });
 }
 
 function setupViewOnlyMedia() {
-  const mediaItems = document.querySelectorAll('.view-only-media');
+  const mediaItems = document.querySelectorAll('.pf-view-only-media-element');
   if (!mediaItems.length) {
     return;
   }
