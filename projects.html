@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,94 +8,117 @@
   <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <nav>
-        <div class="nav-left">
-          <a href="index.html" class="logo">
-            <img src="assets/IMG_20251124_122340.jpg" alt="Sonu Kumar Sharma" class="logo-avatar">
-            <span>Sonu Kumar Sharma</span>
-          </a>
+  <!-- Ambient Background -->
+  <div class="pf-ambient-background-layer">
+    <div class="pf-ambient-glow-blob-1"></div>
+    <div class="pf-ambient-glow-blob-2"></div>
+  </div>
+  <div class="pf-ambient-background-layer pf-wireframe-pattern-bg"></div>
+
+  <!-- Navbar -->
+  <header class="pf-site-header-navbar">
+    <div class="pf-layout-container">
+      <a href="index.html" class="pf-navbar-brand-logo">
+        <span>Sonu Kumar Sharma</span>
+      </a>
+      
+      <div class="pf-navbar-right-section">
+        <ul class="pf-navbar-navigation-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html" class="pf-state-active">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div style="display: flex; align-items: center;">
+          <button type="button" class="pf-theme-switcher-button" aria-label="Switch theme" title="Switch theme">
+            <div class="pf-theme-switcher-icon-wrapper">
+              <span class="material-symbols-outlined pf-icon-mode-light">light_mode</span>
+              <span class="material-symbols-outlined pf-icon-mode-dark">dark_mode</span>
+            </div>
+            <span class="pf-theme-switcher-label">
+              <span class="pf-theme-label-light">Light</span>
+              <span class="pf-theme-label-dark">Dark</span>
+            </span>
+          </button>
         </div>
-        <div class="nav-right">
-          <div class="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="technologies.html">Technologies</a></li>
-            <li><a href="education.html">Education</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
+      </div>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <h1>My Projects</h1>
-      <p>Showcasing my work and the impact of innovative solutions</p>
-    </div>
-  </section>
-
   <main>
-    <div class="container">
-      <h2 class="section-title">Featured Projects</h2>
-
-      <div class="grid">
-
-        <div class="project-card">
-          <div class="project-image">♻️</div>
-          <div class="project-content">
-            <h3><b>Environmental Tech/Green Technology</b></h3>
-            <p><b>Garbage Reporting System </b>- Citizens report overflowing bins/street garbage<br>
-<b>Vehicle Booking</b> - Schedule garbage collection pickups<br>
-<b>Eco-Commerce</b> - Buy fertilizer (from composted waste)<br>
-<b>Authentication</b> - Login/Sign Up system<br>
-<b>Responsive Design</b> - Multi-page website with navigation<br>
-<b>Multilingual Support</b> - Has translation attributes (data-en)
-            </p>
-            <div class="tech-tags">
-              <span class="tech-tag">HTML</span>
-              <span class="tech-tag">CSS</span>
-              <span class="tech-tag">JavaScript</span>
-            </div>
-            <div class="project-links tags-wrapper">
-              <a href="https://agent-6992c611be9967--garbage-management-system1.netlify.app/pages/" target="_blank" rel="noopener noreferrer">View Project</a>
-              <a href="https://github.com/CodeWithSharma-Ji/Garbage_management_System" target="_blank" rel="noopener noreferrer">GitHub</a>
-            </div>
-          </div>
-        </div>
-
+    <div class="pf-layout-container">
+      <div class="pf-page-title-header">
+        <h1 class="pf-heading-primary pf-margin-bottom-4 pf-gradient-text-effect">My Projects</h1>
+        <p class="pf-text-body-large pf-text-surface-variant">Showcasing my work and the impact of innovative solutions</p>
       </div>
 
-      <section id="portfolio-info" class="info-box">
-        <h3>More Projects Available</h3>
-        <p>Check out my GitHub profile for more projects, code samples, and contributions to open-source communities.</p>
-        <a href="https://github.com/CodeWithSharma-Ji" target="_blank" rel="noopener noreferrer" class="cta-button">View GitHub Profile</a>
+      <div class="pf-projects-gallery-grid pf-margin-bottom-16">
+        <!-- Project Card -->
+        <div class="pf-glassmorphism-card pf-interactive-glow-hover" style="display: flex; flex-direction: column;">
+          <div class="pf-bento-card-icon pf-text-primary-color pf-margin-bottom-4" style="font-size: 3rem;">♻️</div>
+          <h3 class="pf-heading-tertiary pf-margin-bottom-2">Garbage Reporting System</h3>
+          <p class="pf-text-label-uppercase pf-text-primary-color pf-margin-bottom-4">Environmental Tech / Green Technology</p>
+          <div class="pf-text-body-medium pf-text-surface-variant pf-margin-bottom-6" style="flex-grow: 1;">
+            <p class="pf-margin-bottom-2"><strong>Garbage Reporting</strong> - Citizens report overflowing bins/street garbage</p>
+            <p class="pf-margin-bottom-2"><strong>Vehicle Booking</strong> - Schedule garbage collection pickups</p>
+            <p class="pf-margin-bottom-2"><strong>Eco-Commerce</strong> - Buy fertilizer (from composted waste)</p>
+            <p class="pf-margin-bottom-2"><strong>Authentication</strong> - Login/Sign Up system</p>
+            <p class="pf-margin-bottom-2"><strong>Responsive Design</strong> - Multi-page website with navigation</p>
+            <p><strong>Multilingual Support</strong> - Has translation attributes</p>
+          </div>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px;">
+            <span class="pf-technology-skill-chip pf-text-label-uppercase" style="padding: 4px 8px; font-size: 0.65rem;">HTML</span>
+            <span class="pf-technology-skill-chip pf-text-label-uppercase" style="padding: 4px 8px; font-size: 0.65rem;">CSS</span>
+            <span class="pf-technology-skill-chip pf-text-label-uppercase" style="padding: 4px 8px; font-size: 0.65rem;">JavaScript</span>
+          </div>
+          <div style="display: flex; gap: 16px; margin-top: auto;">
+            <a href="https://agent-6992c611be9967--garbage-management-system1.netlify.app/pages/" target="_blank" rel="noopener noreferrer" class="pf-action-button-primary" style="text-align: center; flex: 1;">Live Demo</a>
+            <a href="https://github.com/CodeWithSharma-Ji/Garbage_management_System" target="_blank" rel="noopener noreferrer" class="pf-action-button-secondary" style="text-align: center; flex: 1; padding: 8px;">Source Code</a>
+          </div>
+        </div>
+      </div>
+
+      <section class="pf-glassmorphism-card pf-margin-bottom-16 pf-text-center">
+        <h3 class="pf-heading-secondary pf-margin-bottom-4 pf-gradient-text-effect">More Projects Available</h3>
+        <p class="pf-text-body-large pf-text-surface-variant pf-margin-bottom-8">Check out my GitHub profile for more projects, code samples, and contributions to open-source communities.</p>
+        <a href="https://github.com/CodeWithSharma-Ji" target="_blank" rel="noopener noreferrer" class="pf-action-button-primary" style="display: inline-block;">View GitHub Profile</a>
       </section>
     </div>
   </main>
 
-  <footer>
-    <div class="foot">
-      <div class="social-links">
-        <a href="https://github.com/CodeWithSharma-Ji/" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://linkedin.com/in/CodeWithSharma-Ji/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
-        <a href="mailto:sonuk663541@gmail.com">Email</a>
-      </div>
-      <p>&copy; 2026 Sonu Kumar Sharma. All Rights Reserved.</p>
+  <!-- Mobile Bottom Navigation -->
+  <nav class="pf-mobile-bottom-navigation">
+    <a href="index.html" class="pf-mobile-nav-item">
+      <span class="material-symbols-outlined">home</span>
+      <span class="pf-mobile-nav-label">Home</span>
+    </a>
+    <a href="about.html" class="pf-mobile-nav-item">
+      <span class="material-symbols-outlined">person</span>
+      <span class="pf-mobile-nav-label">About</span>
+    </a>
+    <a href="projects.html" class="pf-mobile-nav-item">
+      <span class="material-symbols-outlined">code</span>
+      <span class="pf-mobile-nav-label">Projects</span>
+    </a>
+    <a href="contact.html" class="pf-mobile-nav-item">
+      <span class="material-symbols-outlined">mail</span>
+      <span class="pf-mobile-nav-label">Contact</span>
+    </a>
+  </nav>
+
+  <footer class="pf-site-footer">
+    <div class="pf-layout-container">
+      <p class="pf-footer-copyright-text">&copy; 2026 Sonu Kumar Sharma. All Rights Reserved.</p>
+      <ul class="pf-footer-navigation-links">
+        <li><a href="https://github.com/CodeWithSharma-Ji/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://linkedin.com/in/CodeWithSharma-Ji/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+        <li><a href="mailto:sonuk663541@gmail.com">Email</a></li>
+      </ul>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
 </body>
 </html>
-
-

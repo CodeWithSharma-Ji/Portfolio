@@ -1,117 +1,267 @@
-﻿<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="js/theme-init.js"></script>
-  <title>Sonu Kumar Sharma - Portfolio</title>
-  <link rel="stylesheet" href="styles/style.css">
-</head>
-<body>
-  <header>
-    <div class="container">
-      <nav>
-        <div class="nav-left">
-          <a href="index.html" class="logo">
-            <img src="assets/IMG_20251124_122340.jpg" alt="Sonu Kumar Sharma" class="logo-avatar">
-            <span>Sonu Kumar Sharma</span>
-          </a>
-        </div>
-        <div class="nav-right">
-          <div class="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="js/theme-init.js"></script>
+    <title>Sonu Kumar Sharma - Portfolio</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+
+  <body>
+    <!-- Ambient Background -->
+    <div class="pf-ambient-background-layer">
+      <div class="pf-ambient-glow-blob-1"></div>
+      <div class="pf-ambient-glow-blob-2"></div>
+    </div>
+    <div class="pf-ambient-background-layer pf-wireframe-pattern-bg"></div>
+
+    <!-- Navbar -->
+    <header class="pf-site-header-navbar">
+      <div class="pf-layout-container">
+        <a href="index.html" class="pf-navbar-brand-logo">
+          <span>Sonu Kumar Sharma</span>
+        </a>
+
+        <div class="pf-navbar-right-section">
+          <ul class="pf-navbar-navigation-list">
+            <li><a href="index.html" class="pf-state-active">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="projects.html">Projects</a></li>
-            <li><a href="technologies.html">Technologies</a></li>
-            <li><a href="education.html">Education</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
-        </div>
-      </nav>
-    </div>
-  </header>
 
-  <section class="hero">
-    <div class="container">
-      <h1>Welcome to My Portfolio</h1>
-      <p>Full Stack Developer | Problem Solver | Tech Enthusiast</p>
-      <a href="about.html" class="cta-button">Learn More About Me</a>
-    </div>
-  </section>
-
-  <main>
-    <div class="container">
-      <section id="features">
-        <h2 class="section-title">What I Offer</h2>
-        <div class="grid">
-          <div class="card">
-            <h3>💡 Innovation</h3>
-            <p>Creative solutions to complex problems using modern technologies and best practices.</p>
-          </div>
-          <div class="card">
-            <h3>🎯 Quality</h3>
-            <p>Commitment to delivering high-quality code and exceptional user experiences.</p>
-          </div>
-          <div class="card">
-            <h3>📚 Continuous Learning</h3>
-            <p>Always exploring new technologies and methodologies to stay ahead in the field.</p>
-          </div>
-          <div class="card">
-            <h3>🤝 Collaboration</h3>
-            <p>Working effectively with teams to achieve project goals and deliver results.</p>
-          </div>
-          <div class="card">
-            <h3>⚡ Performance</h3>
-            <p>Building fast, efficient, and scalable applications that users love.</p>
-          </div>
-          <div class="card">
-            <h3>🔒 Security</h3>
-            <p>Implementing best security practices to protect data and ensure application integrity.</p>
+          <div style="display: flex; align-items: center">
+            <button
+              type="button"
+              class="pf-theme-switcher-button"
+              aria-label="Switch theme"
+              title="Switch theme"
+            >
+              <div class="pf-theme-switcher-icon-wrapper">
+                <span class="material-symbols-outlined pf-icon-mode-light"
+                  >light_mode</span
+                >
+                <span class="material-symbols-outlined pf-icon-mode-dark"
+                  >dark_mode</span
+                >
+              </div>
+              <span class="pf-theme-switcher-label">
+                <span class="pf-theme-label-light">Light</span>
+                <span class="pf-theme-label-dark">Dark</span>
+              </span>
+            </button>
           </div>
         </div>
-      </section>
-
-      <section id="highlights" class="section-margin">
-        <h2 class="section-title">Quick Links</h2>
-        <div class="grid">
-          <div class="card">
-            <h3>🏆 My Achievements</h3>
-            <p>Explore my accomplishments, certifications, and awards.</p>
-            <a href="about.html" class="card-link">View Achievements →</a>
-          </div>
-          <div class="card">
-            <h3>🚀 Featured Projects</h3>
-            <p>Check out my best projects and the impact they've created.</p>
-            <a href="projects.html" class="card-link">View Projects →</a>
-          </div>
-          <div class="card">
-            <h3>💻 Tech Stack</h3>
-            <p>Discover the technologies and tools I work with.</p>
-            <a href="technologies.html" class="card-link">View Tech Stack →</a>
-          </div>
-        </div>
-      </section>
-    </div>
-  </main>
-
-  <footer>
-    <div class="foot">
-      <div class="social-links">
-        <a href="https://github.com/CodeWithSharma-Ji/" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://linkedin.com/in/CodeWithSharma-Ji" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
-        <a href="mailto:sonuk663541@gmail.com">Email</a>
       </div>
-      <p>&copy; 2026 Sonu Kumar Sharma. All Rights Reserved.</p>
-    </div>
-  </footer>
+    </header>
 
-  <script src="js/main.js"></script>
-</body>
+    <main>
+      <!-- Hero Section -->
+      <section class="pf-hero-banner-section">
+        <div class="pf-layout-container">
+          <div class="pf-hero-status-badge">
+            <div class="pf-status-indicator-dot"></div>
+            <span class="pf-text-label-uppercase pf-text-surface-color"
+              >Available for opportunities</span
+            >
+          </div>
+          <h1 class="pf-heading-primary pf-margin-bottom-6 pf-gradient-text-effect">Welcome to My Portfolio</h1>
+          <p class="pf-text-body-large pf-text-surface-variant pf-hero-subtitle-description">
+            Full Stack Developer | Problem Solver | Tech Enthusiast
+          </p>
+          <div class="pf-hero-action-buttons-container">
+            <a href="projects.html" class="pf-action-button-primary">View Work</a>
+            <a href="#" class="pf-action-button-secondary" download>Download Resume</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bento Grid Section -->
+      <section class="pf-bento-grid-section">
+        <div class="pf-layout-container">
+          <div class="pf-bento-layout-grid">
+            <div class="pf-glassmorphism-card pf-interactive-glow-hover pf-bento-card-large">
+              <div class="pf-bento-large-card-background"></div>
+              <h2 class="pf-heading-secondary pf-gradient-text-effect pf-margin-bottom-4">Innovation & Quality</h2>
+              <p
+                class="pf-text-body-medium pf-text-surface-variant pf-margin-bottom-6"
+                style="max-width: 60%"
+              >
+                Delivering creative solutions to complex problems using modern
+                technologies and best practices.
+              </p>
+              <a
+                href="about.html"
+                class="pf-action-button-primary"
+                style="width: max-content; position: relative; z-index: 2"
+                >Explore Achievements</a
+              >
+            </div>
+
+            <div class="pf-glassmorphism-card pf-interactive-glow-hover pf-bento-card-small">
+              <div class="pf-bento-card-icon pf-text-primary-color">
+                <span
+                  class="material-symbols-outlined"
+                  style="font-size: inherit"
+                  >bolt</span
+                >
+              </div>
+              <h3 class="pf-heading-tertiary pf-margin-bottom-2">Performance</h3>
+              <p class="pf-text-body-medium pf-text-surface-variant">
+                Building fast, efficient, and scalable applications.
+              </p>
+            </div>
+
+            <div class="pf-glassmorphism-card pf-interactive-glow-hover pf-bento-card-small">
+              <div class="pf-bento-card-icon pf-text-primary-color">
+                <span
+                  class="material-symbols-outlined"
+                  style="font-size: inherit"
+                  >security</span
+                >
+              </div>
+              <h3 class="pf-heading-tertiary pf-margin-bottom-2">Security</h3>
+              <p class="pf-text-body-medium pf-text-surface-variant">
+                Implementing best security practices to protect data.
+              </p>
+            </div>
+
+            <div class="pf-glassmorphism-card pf-interactive-glow-hover pf-bento-card-small">
+              <div class="pf-bento-card-icon pf-text-primary-color">
+                <span
+                  class="material-symbols-outlined"
+                  style="font-size: inherit"
+                  >menu_book</span
+                >
+              </div>
+              <h3 class="pf-heading-tertiary pf-margin-bottom-2">Continuous Learning</h3>
+              <p class="pf-text-body-medium pf-text-surface-variant">
+                Always exploring new technologies and methodologies.
+              </p>
+            </div>
+
+            <div class="pf-glassmorphism-card pf-interactive-glow-hover pf-bento-card-small">
+              <div class="pf-bento-card-icon pf-text-primary-color">
+                <span
+                  class="material-symbols-outlined"
+                  style="font-size: inherit"
+                  >handshake</span
+                >
+              </div>
+              <h3 class="pf-heading-tertiary pf-margin-bottom-2">Collaboration</h3>
+              <p class="pf-text-body-medium pf-text-surface-variant">
+                Working effectively with teams to achieve project goals.
+              </p>
+            </div>
+
+            <div class="pf-glassmorphism-card pf-interactive-glow-hover pf-bento-card-small">
+              <div class="pf-bento-card-icon pf-text-primary-color">
+                <span
+                  class="material-symbols-outlined"
+                  style="font-size: inherit"
+                  >rocket_launch</span
+                >
+              </div>
+              <h3 class="pf-heading-tertiary pf-margin-bottom-2">Featured Projects</h3>
+              <p class="pf-text-body-medium pf-text-surface-variant pf-margin-bottom-4">
+                Check out my best projects and their impact.
+              </p>
+              <a
+                href="projects.html"
+                class="pf-text-primary-color pf-text-label-uppercase"
+                style="text-decoration: none; margin-top: auto"
+                >View Projects →</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tech Marquee Section -->
+      <section class="pf-technology-marquee-section">
+        <div class="pf-marquee-scroll-container">
+          <!-- Replicating items for infinite scroll effect -->
+          <div class="pf-technology-skill-chip pf-text-label-uppercase">HTML5</div>
+          <div class="pf-technology-skill-chip pf-text-label-uppercase">CSS3</div>
+          <div class="pf-technology-skill-chip pf-text-label-uppercase">JavaScript</div>
+          <div class="pf-technology-skill-chip pf-text-label-uppercase">React</div>
+          <div class="pf-technology-skill-chip pf-text-label-uppercase">Node.js</div>
+          <div class="pf-technology-skill-chip pf-text-label-uppercase">MongoDB</div>
+          <div class="pf-technology-skill-chip pf-text-label-uppercase">Python</div>
+          <div class="pf-technology-skill-chip pf-text-label-uppercase">SQL</div>
+          <div class="pf-technology-skill-chip pf-text-label-uppercase">Git</div>
+          <div class="pf-technology-skill-chip pf-text-label-uppercase">Docker</div>
+
+          <div class="pf-technology-skill-chip pf-text-label-uppercase">HTML5</div>
+          <div class="pf-technology-skill-chip pf-text-label-uppercase">CSS3</div>
+          <div class="pf-technology-skill-chip pf-text-label-uppercase">JavaScript</div>
+          <div class="pf-technology-skill-chip pf-text-label-uppercase">React</div>
+          <div class="pf-technology-skill-chip pf-text-label-uppercase">Node.js</div>
+          <div class="pf-technology-skill-chip pf-text-label-uppercase">MongoDB</div>
+          <div class="pf-technology-skill-chip pf-text-label-uppercase">Python</div>
+          <div class="pf-technology-skill-chip pf-text-label-uppercase">SQL</div>
+          <div class="pf-technology-skill-chip pf-text-label-uppercase">Git</div>
+          <div class="pf-technology-skill-chip pf-text-label-uppercase">Docker</div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="pf-mobile-bottom-navigation">
+      <a href="index.html" class="pf-mobile-nav-item">
+        <span class="material-symbols-outlined">home</span>
+        <span class="pf-mobile-nav-label">Home</span>
+      </a>
+      <a href="about.html" class="pf-mobile-nav-item">
+        <span class="material-symbols-outlined">person</span>
+        <span class="pf-mobile-nav-label">About</span>
+      </a>
+      <a href="projects.html" class="pf-mobile-nav-item">
+        <span class="material-symbols-outlined">code</span>
+        <span class="pf-mobile-nav-label">Projects</span>
+      </a>
+      <a href="contact.html" class="pf-mobile-nav-item">
+        <span class="material-symbols-outlined">mail</span>
+        <span class="pf-mobile-nav-label">Contact</span>
+      </a>
+    </nav>
+
+    <footer class="pf-site-footer">
+      <div class="pf-layout-container">
+        <p class="pf-footer-copyright-text">
+          &copy; 2026 Sonu Kumar Sharma. All Rights Reserved.
+        </p>
+        <ul class="pf-footer-navigation-links">
+          <li>
+            <a
+              href="https://github.com/CodeWithSharma-Ji/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://linkedin.com/in/CodeWithSharma-Ji"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Twitter</a
+            >
+          </li>
+          <li><a href="mailto:sonuk663541@gmail.com">Email</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
 </html>
-
