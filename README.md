@@ -1,41 +1,16 @@
 # Sonu Kumar Sharma Portfolio
 
-A responsive multi-page portfolio website built with HTML, CSS, and vanilla JavaScript.
+A premium, responsive, and modern multi-page portfolio website built with HTML5, CSS3, and vanilla JavaScript. 
 
-This site presents Sonu Kumar Sharma's profile, skills, education, certifications, projects, and contact details with a shared navigation system, light/dark theme support, and mobile-friendly layouts.
+This site is designed to showcase Sonu Kumar Sharma's technical expertise, projects, and professional background. It features a robust, conflict-free BEM-inspired CSS architecture, dynamic theme switching, and seamless responsive layouts.
 
-## Current Website Sections
+## Key Features
 
-- `index.html` - homepage with introduction, strengths, and quick links
-- `about.html` - personal summary, key skills, and certification highlights
-- `projects.html` - featured project showcase with live and GitHub links
-- `technologies.html` - frontend, backend, tools, and proficiency sections
-- `education.html` - formal education, learning summary, and featured certificate viewer
-- `contact.html` - contact details and EmailJS-ready contact form
-
-## Current Features
-
-- responsive multi-page layout
-- shared navbar across all pages
-- light and dark theme toggle with saved preference
-- active navigation highlighting
-- mobile hamburger menu with animated open state
-- clickable header logo that always returns to the homepage
-- featured cybersecurity certificate with view-only modal preview
-- animated cards and section reveal effects
-- EmailJS-ready contact form
-
-## Current Assets
-
-- `assets/IMG_20251124_122340.jpg` - navbar/profile logo image
-- `assets/cyber-security-certificate.jpeg` - featured certificate preview
-
-## Tech Stack
-
-- HTML5
-- CSS3
-- JavaScript
-- EmailJS Browser SDK
+- **Unique BEM-inspired CSS System**: All classes are securely namespaced with a `pf-` prefix to prevent any conflicts with future third-party libraries.
+- **Dynamic Theme Switcher**: A fully functional light/dark mode toggle that persists user preference via `localStorage` and gracefully syncs UI elements.
+- **Responsive Navigation**: A standardized, unified navbar across all pages ensuring perfect visual alignment on both desktop and mobile devices.
+- **Bento Box UI Components**: Modern, glassmorphism-styled cards that highlight content with interactive hover glows.
+- **EmailJS Integration**: A fully functional, backend-less contact form.
 
 ## Project Structure
 
@@ -45,36 +20,44 @@ Portfolio/
 |   |-- cyber-security-certificate.jpeg
 |   `-- IMG_20251124_122340.jpg
 |-- js/
-|   |-- contact.js
-|   |-- main.js
-|   `-- theme-init.js
+|   |-- contact.js       # EmailJS form submission logic
+|   |-- main.js          # Core UI, Theme Toggle, and Component logic
+|   `-- theme-init.js    # Prevents FOUC (Flash of Unstyled Content) during theme load
 |-- styles/
-|   `-- style.css
-|-- about.html
-|-- contact.html
-|-- education.html
-|-- index.html
-|-- projects.html
-|-- technologies.html
+|   `-- style.css        # Centralized stylesheet with prefixed architecture
+|-- index.html           # Homepage & Hero Section
+|-- about.html           # Education, Skills, and Bio (consolidated)
+|-- projects.html        # Project Showcase
+|-- contact.html         # Contact Form
 `-- README.md
 ```
 
-## Local Usage
+*Note: Legacy `technologies.html` and `education.html` pages have been successfully deprecated and consolidated to streamline the user experience.*
 
-No build step is required.
+## Vercel Deployment Guide
 
-1. Open `index.html` in a browser.
-2. Navigate through the pages to verify layout, theme switching, mobile navigation, and homepage logo link behavior.
-3. Open `education.html` and use the certificate button to test the certificate viewer.
-4. Open `contact.html` to test the contact form UI.
+This project is a 100% static site and is natively ready for seamless deployment to [Vercel](https://vercel.com). No build scripts or configurations are necessary.
 
-## Contact Form Setup
+1. **Push to GitHub**: Ensure your latest commits are pushed to your GitHub repository.
+2. **Import to Vercel**: Log into Vercel and click **Add New Project**.
+3. **Select Repository**: Select this repository from your GitHub account.
+4. **Deploy**: Leave all framework presets and build commands empty (Vercel automatically detects static HTML). Click **Deploy**.
 
-The contact form uses EmailJS, but the repo still contains placeholder keys.
+Vercel will build and serve your site globally within seconds. Any future commits to the `main` branch will trigger automatic deployments.
 
-Update `js/contact.js` with your real values:
+## Local Setup
 
-```js
+No local build step is required.
+
+1. Clone the repository.
+2. Open `index.html` in your browser of choice.
+3. Test the theme switcher, responsive layouts, and navigation.
+
+## Contact Form Configuration (EmailJS)
+
+To enable the contact form, you must supply your EmailJS credentials. Open `js/contact.js` and update the `EMAILJS_CONFIG` object:
+
+```javascript
 const EMAILJS_CONFIG = {
   publicKey: "YOUR_EMAILJS_PUBLIC_KEY",
   serviceId: "YOUR_EMAILJS_SERVICE_ID",
@@ -82,28 +65,6 @@ const EMAILJS_CONFIG = {
 };
 ```
 
-After replacing the placeholders, the contact form can send messages directly from the website.
-
-## Current Content Snapshot
-
-- featured project: Garbage Reporting System
-- featured certificate: Program in Cyber Security
-- current education highlight: BCA at KCC Institute of Legal and Higher Education
-
-## Files To Customize
-
-- update page content in the HTML files
-- update the main design system in `styles/style.css`
-- update shared interactions in `js/main.js`
-- update EmailJS settings in `js/contact.js`
-- replace images inside `assets/` when needed
-
-## Notes
-
-- this is a static website and can be hosted on GitHub Pages, Netlify, Vercel, or any static host
-- the contact form will not send messages until valid EmailJS credentials are added
-- the certificate preview is view-only in the UI, but browsers cannot fully prevent screenshots or determined downloads
-
 ## Last Updated
 
-March 14, 2026
+April 2026
