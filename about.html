@@ -1,5 +1,6 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,121 +8,241 @@
   <title>About & Achievements - Sonu Kumar Sharma</title>
   <link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body>
-  <header>
-    <div class="container">
-      <nav>
-        <div class="nav-left">
-          <a href="index.html" class="logo">
-            <img src="assets/IMG_20251124_122340.jpg" alt="Sonu Kumar Sharma" class="logo-avatar">
-            <span>Sonu Kumar Sharma</span>
-          </a>
+  <!-- Ambient Background -->
+  <div class="pf-ambient-background-layer">
+    <div class="pf-ambient-glow-blob-1"></div>
+    <div class="pf-ambient-glow-blob-2"></div>
+  </div>
+  <div class="pf-ambient-background-layer pf-wireframe-pattern-bg"></div>
+
+  <!-- Navbar -->
+  <header class="pf-site-header-navbar">
+    <div class="pf-layout-container">
+      <a href="index.html" class="pf-navbar-brand-logo">
+        <span>Sonu Kumar Sharma</span>
+      </a>
+
+      <div class="pf-navbar-right-section">
+        <ul class="pf-navbar-navigation-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="pf-state-active">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div style="display: flex; align-items: center;">
+          <button type="button" class="pf-theme-switcher-button" aria-label="Switch theme" title="Switch theme">
+            <div class="pf-theme-switcher-icon-wrapper">
+              <span class="material-symbols-outlined pf-icon-mode-light">light_mode</span>
+              <span class="material-symbols-outlined pf-icon-mode-dark">dark_mode</span>
+            </div>
+            <span class="pf-theme-switcher-label">
+              <span class="pf-theme-label-light">Light</span>
+              <span class="pf-theme-label-dark">Dark</span>
+            </span>
+          </button>
         </div>
-        <div class="nav-right">
-          <div class="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="technologies.html">Technologies</a></li>
-            <li><a href="education.html">Education</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
+      </div>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <h1>About Me</h1>
-      <p>Passionate developer with expertise in creating innovative digital solutions</p>
-    </div>
-  </section>
-
   <main>
-    <div class="container">
-      <section id="bio">
-        <h2 class="section-title">Who Am I?</h2>
-        <div class="bio-box">
-          <p>I'm Sonu Sharma, a dedicated and passionate full-stack developer with a strong commitment to creating digital solutions that make a real impact. With expertise in modern web technologies, I transform ideas into functional, beautiful, and user-friendly applications.</p>
-          <p>I believe in continuous learning and staying updated with the latest technologies. My approach combines technical excellence with creative problem-solving to deliver solutions that exceed expectations.</p>
+    <div class="pf-layout-container">
+      <div class="pf-page-title-header">
+        <h1 class="pf-heading-primary pf-margin-bottom-4 pf-gradient-text-effect">About Me</h1>
+        <p class="pf-text-body-large pf-text-surface-variant">Passionate developer with expertise in creating innovative
+          digital solutions</p>
+      </div>
+
+      <section class="pf-about-layout-grid pf-margin-bottom-16">
+        <div class="pf-about-profile-image-wrapper pf-glassmorphism-card" style="padding: 16px;">
+          <img src="assets/IMG_20251124_122340.jpg" alt="Sonu Kumar Sharma" class="pf-view-only-media-element"
+            style="border-radius: 8px;">
+        </div>
+        <div class="pf-bio-content-container pf-glassmorphism-card">
+          <h2 class="pf-heading-secondary pf-margin-bottom-6">Who Am I?</h2>
+          <p class="pf-text-body-large pf-text-surface-variant pf-margin-bottom-4">
+            I'm Sonu Sharma, a dedicated and passionate full-stack developer with a strong commitment to creating
+            digital solutions that make a real impact. With expertise in modern web technologies, I transform ideas into
+            functional, beautiful, and user-friendly applications.
+          </p>
+          <p class="pf-text-body-large pf-text-surface-variant">
+            I believe in continuous learning and staying updated with the latest technologies. My approach combines
+            technical excellence with creative problem-solving to deliver solutions that exceed expectations.
+          </p>
         </div>
       </section>
 
-      <section id="skills" class="section-margin">
-        <h2 class="section-title">Key Skills</h2>
-        <div class="grid">
-          <div class="card">
-            <h3>Frontend Development</h3>
-            <p>Expert in HTML, CSS, JavaScript, React, and modern UI frameworks. Passionate about creating responsive and accessible web interfaces.</p>
+      <!-- Skills -->
+      <section class="pf-margin-bottom-16">
+        <h2 class="pf-heading-secondary pf-margin-bottom-8 pf-text-center pf-gradient-text-effect">Key Skills</h2>
+        <div class="pf-bento-layout-grid">
+          <div class="pf-glassmorphism-card pf-interactive-glow-hover pf-bento-card-small">
+            <h3 class="pf-heading-tertiary pf-margin-bottom-2">Frontend Development</h3>
+            <p class="pf-text-body-medium pf-text-surface-variant">Expert in HTML, CSS, JavaScript, React, and modern UI
+              frameworks. Passionate about creating responsive and accessible web interfaces.</p>
           </div>
-          <div class="card">
-            <h3>Backend Development</h3>
-            <p>Proficient in Node.js, Python, and database design. Experienced in building scalable APIs and server-side solutions.</p>
+          <div class="pf-glassmorphism-card pf-interactive-glow-hover pf-bento-card-small">
+            <h3 class="pf-heading-tertiary pf-margin-bottom-2">Backend Development</h3>
+            <p class="pf-text-body-medium pf-text-surface-variant">Proficient in Node.js, Python, and database design.
+              Experienced in building scalable APIs and server-side solutions.</p>
           </div>
-          <div class="card">
-            <h3>Full Stack Solutions</h3>
-            <p>End-to-end development expertise. Capable of taking projects from conception to deployment and maintenance.</p>
+          <div class="pf-glassmorphism-card pf-interactive-glow-hover pf-bento-card-small">
+            <h3 class="pf-heading-tertiary pf-margin-bottom-2">Full Stack Solutions</h3>
+            <p class="pf-text-body-medium pf-text-surface-variant">End-to-end development expertise. Capable of taking projects
+              from conception to deployment and maintenance.</p>
           </div>
-          <div class="card">
-            <h3>Problem Solving</h3>
-            <p>Strong analytical skills with ability to break down complex problems and deliver efficient solutions.</p>
+          <div class="pf-glassmorphism-card pf-interactive-glow-hover pf-bento-card-small">
+            <h3 class="pf-heading-tertiary pf-margin-bottom-2">Problem Solving</h3>
+            <p class="pf-text-body-medium pf-text-surface-variant">Strong analytical skills with ability to break down complex
+              problems and deliver efficient solutions.</p>
           </div>
-          <div class="card">
-            <h3>Team Collaboration</h3>
-            <p>Excellent communication skills and experience working in agile teams to achieve common goals.</p>
+          <div class="pf-glassmorphism-card pf-interactive-glow-hover pf-bento-card-small">
+            <h3 class="pf-heading-tertiary pf-margin-bottom-2">Team Collaboration</h3>
+            <p class="pf-text-body-medium pf-text-surface-variant">Excellent communication skills and experience working in
+              agile teams to achieve common goals.</p>
           </div>
-          <div class="card">
-            <h3>Continuous Learning</h3>
-            <p>Always staying updated with latest trends and technologies in web development industry.</p>
+          <div class="pf-glassmorphism-card pf-interactive-glow-hover pf-bento-card-small">
+            <h3 class="pf-heading-tertiary pf-margin-bottom-2">Continuous Learning</h3>
+            <p class="pf-text-body-medium pf-text-surface-variant">Always staying updated with latest trends and technologies
+              in web development industry.</p>
           </div>
         </div>
       </section>
 
-      <section id="certifications" class="section-margin">
-        <h2 class="section-title">Certifications</h2>
-        <div class="grid">
-          <div class="card">
-            <h3>Frontend Web Development</h3>
-            <p>Completed certification focused on HTML, CSS, JavaScript, and responsive interface design for modern websites.</p>
+      <!-- Qualifications -->
+      <section class="pf-margin-bottom-16">
+        <h2 class="pf-heading-secondary pf-margin-bottom-8 pf-text-center pf-gradient-text-effect">Educational Qualifications</h2>
+        <div class="pf-projects-gallery-grid">
+          <div class="pf-glassmorphism-card pf-interactive-glow-hover" style="display: flex; flex-direction: column;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+              <span class="material-symbols-outlined"
+                style="font-size: 32px; color: var(--color-primary);">school</span>
+              <h3 class="pf-heading-tertiary" style="margin: 0;">Bachelor of Computer Application (BCA)</h3>
+            </div>
+            <p class="pf-text-label-uppercase pf-text-primary-color pf-margin-bottom-4">KCC Institute of Legal and Higher Education • 2025 - 2028</p>
+            <p class="pf-text-body-medium pf-text-surface-variant pf-margin-bottom-6" style="flex-grow: 1;">Currently pursuing BCA with a
+              strong interest in ethical hacking and cybersecurity. Building a robust foundation in modern technology
+              and system architecture.</p>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto;">
+              <span class="pf-technology-skill-chip pf-text-label-uppercase" style="padding: 4px 8px; font-size: 0.65rem;">Web
+                Development</span>
+              <span class="pf-technology-skill-chip pf-text-label-uppercase" style="padding: 4px 8px; font-size: 0.65rem;">System Design</span>
+              <span class="pf-technology-skill-chip pf-text-label-uppercase" style="padding: 4px 8px; font-size: 0.65rem;">Cybersecurity</span>
+            </div>
           </div>
-          <div class="card">
-            <h3>Full Stack Development</h3>
-            <p>Covered end-to-end application development including frontend integration, backend logic, APIs, and deployment basics.</p>
+
+          <div class="pf-glassmorphism-card pf-interactive-glow-hover" style="display: flex; flex-direction: column;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+              <span class="material-symbols-outlined"
+                style="font-size: 32px; color: var(--color-primary);">menu_book</span>
+              <h3 class="pf-heading-tertiary" style="margin: 0;">Higher Secondary School (12th Grade)</h3>
+            </div>
+            <p class="pf-text-label-uppercase pf-text-primary-color pf-margin-bottom-4">Sarvodaya Bal Vidyalaya • 2024 - 2025</p>
+            <p class="pf-text-body-medium pf-text-surface-variant pf-margin-bottom-6" style="flex-grow: 1;">Completed secondary education
+              with a distinct focus on Web Application. Achieved distinction in core and elective subjects. Percentage:
+              65%</p>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto;">
+              <span class="pf-technology-skill-chip pf-text-label-uppercase" style="padding: 4px 8px; font-size: 0.65rem;">Web
+                Application</span>
+              <span class="pf-technology-skill-chip pf-text-label-uppercase" style="padding: 4px 8px; font-size: 0.65rem;">Political
+                Science</span>
+              <span class="pf-technology-skill-chip pf-text-label-uppercase" style="padding: 4px 8px; font-size: 0.65rem;">English Core</span>
+            </div>
           </div>
-          <div class="card">
-            <h3>Python Programming</h3>
-            <p>Earned certification in Python fundamentals with emphasis on problem solving, scripting, and application development.</p>
+
+          <div class="pf-glassmorphism-card pf-interactive-glow-hover" style="display: flex; flex-direction: column;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+              <span class="material-symbols-outlined"
+                style="font-size: 32px; color: var(--color-primary);">history_edu</span>
+              <h3 class="pf-heading-tertiary" style="margin: 0;">Secondary School<br> (10th Grade)</h3>
+            </div>
+            <p class="pf-text-label-uppercase pf-text-primary-color pf-margin-bottom-4">Sarvodaya Bal Vidyalaya • 2022 - 2023</p>
+            <p class="pf-text-body-medium pf-text-surface-variant pf-margin-bottom-6" style="flex-grow: 1;">Successfully completed secondary
+              education with a strong foundation in core subjects. Developed an early interest in computer science and
+              web technologies.</p>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto;">
+              <span class="pf-technology-skill-chip pf-text-label-uppercase" style="padding: 4px 8px; font-size: 0.65rem;">Science</span>
+              <span class="pf-technology-skill-chip pf-text-label-uppercase" style="padding: 4px 8px; font-size: 0.65rem;">Mathematics</span>
+              <span class="pf-technology-skill-chip pf-text-label-uppercase" style="padding: 4px 8px; font-size: 0.65rem;">English</span>
+            </div>
           </div>
-          <div class="card certificate-summary-card">
-            <h3>Program in Cyber Security</h3>
-            <p class="certificate-meta">NIIT Foundation via Skill India Digital Hub • Completed February 17, 2026 • 13 Hours</p>
-            <p>This certificate marks the point where my curiosity for building software started evolving into a sharper mindset for defending it, thinking not only like a developer, but also like a security-conscious problem solver.</p>
+        </div>
+      </section>
+
+      <!-- Certifications -->
+      <section class="pf-margin-bottom-16">
+        <h2 class="pf-heading-secondary pf-margin-bottom-8 pf-text-center pf-gradient-text-effect">Certifications</h2>
+        <div class="pf-projects-gallery-grid">
+          <div class="pf-glassmorphism-card pf-interactive-glow-hover" style="display: flex; flex-direction: column;">
+            <h3 class="pf-heading-tertiary pf-margin-bottom-2">Frontend Web Development</h3>
+            <p class="pf-text-body-medium pf-text-surface-variant">Completed certification focused on HTML, CSS, JavaScript,
+              and responsive interface design for modern websites.</p>
+          </div>
+          <div class="pf-glassmorphism-card pf-interactive-glow-hover" style="display: flex; flex-direction: column;">
+            <h3 class="pf-heading-tertiary pf-margin-bottom-2">Full Stack Development</h3>
+            <p class="pf-text-body-medium pf-text-surface-variant">Covered end-to-end application development including
+              frontend integration, backend logic, APIs, and deployment basics.</p>
+          </div>
+          <div class="pf-glassmorphism-card pf-interactive-glow-hover" style="display: flex; flex-direction: column;">
+            <h3 class="pf-heading-tertiary pf-margin-bottom-2">Python Programming</h3>
+            <p class="pf-text-body-medium pf-text-surface-variant">Earned certification in Python fundamentals with emphasis on
+              problem solving, scripting, and application development.</p>
+          </div>
+          <div class="pf-glassmorphism-card pf-interactive-glow-hover pf-certificate-preview-trigger"
+            style="cursor: pointer; display: flex; flex-direction: column;"
+            data-certificate-src="assets/cyber-security-certificate.jpeg"
+            data-certificate-alt="Cyber Security Certificate">
+            <h3 class="pf-heading-tertiary pf-margin-bottom-2">Program in Cyber Security</h3>
+            <p class="pf-text-label-uppercase pf-text-primary-color pf-margin-bottom-4">NIIT Foundation • Feb 17, 2026 • 13 Hours</p>
+            <p class="pf-text-body-medium pf-text-surface-variant pf-margin-bottom-4" style="flex-grow: 1;">This certificate marks the point
+              where my curiosity for building software started evolving into a sharper mindset for defending it,
+              thinking not only like a developer, but also like a security-conscious problem solver.</p>
+            <div class="pf-text-label-uppercase pf-text-surface-color" style="display: flex; align-items: center; gap: 8px;">
+              <span class="material-symbols-outlined" style="font-size: 16px;">visibility</span> View Certificate
+            </div>
           </div>
         </div>
       </section>
     </div>
   </main>
 
-  <footer>
-    <div class="foot">
-      <div class="social-links">
-        <a href="https://github.com/CodeWithSharma-Ji/" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://linkedin.com/in/CodeWithSharma-Ji/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
-        <a href="mailto:sonuk663541@gmail.com">Email</a>
-      </div>
-      <p>&copy; 2026 Sonu Kumar Sharma. All Rights Reserved.</p>
+  <!-- Mobile Bottom Navigation -->
+  <nav class="pf-mobile-bottom-navigation">
+    <a href="index.html" class="pf-mobile-nav-item">
+      <span class="material-symbols-outlined">home</span>
+      <span class="pf-mobile-nav-label">Home</span>
+    </a>
+    <a href="about.html" class="pf-mobile-nav-item">
+      <span class="material-symbols-outlined">person</span>
+      <span class="pf-mobile-nav-label">About</span>
+    </a>
+    <a href="projects.html" class="pf-mobile-nav-item">
+      <span class="material-symbols-outlined">code</span>
+      <span class="pf-mobile-nav-label">Projects</span>
+    </a>
+    <a href="contact.html" class="pf-mobile-nav-item">
+      <span class="material-symbols-outlined">mail</span>
+      <span class="pf-mobile-nav-label">Contact</span>
+    </a>
+  </nav>
+
+  <footer class="pf-site-footer">
+    <div class="pf-layout-container">
+      <p class="pf-footer-copyright-text">&copy; 2026 Sonu Kumar Sharma. All Rights Reserved.</p>
+      <ul class="pf-footer-navigation-links">
+        <li><a href="https://github.com/CodeWithSharma-Ji/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://linkedin.com/in/CodeWithSharma-Ji/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </li>
+        <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+        <li><a href="mailto:sonuk663541@gmail.com">Email</a></li>
+      </ul>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
 </body>
+
 </html>
-
-
